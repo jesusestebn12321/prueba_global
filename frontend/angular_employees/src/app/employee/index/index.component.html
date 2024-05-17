@@ -1,0 +1,30 @@
+<div class="list row">
+  <div class="col-md-8">
+    
+  </div>
+  <div class="col-md-6">
+    <h4>employees List</h4>
+
+    <ul role="list" class="divide-y divide-gray-100">
+      @for (employee of employees; track employee.id; let i = $index) {
+        <li class="flex justify-between gap-x-6 py-5">
+          <div class="flex min-w-0 gap-x-4">
+            <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="https://cdn-icons-png.freepik.com/512/3135/3135715.png?ga=GA1.1.2083431614.1715949612" alt="">
+            <div class="min-w-0 flex-auto">
+              <p class="text-sm font-semibold leading-6 text-gray-900">{{ employee.first_name }} {{ employee.other_names }}</p>
+              <p class="text-sm font-semibold leading-6 text-gray-900">{{ employee.first_last_name }} {{ employee.second_last_name }}</p>
+              <p class="mt-1 truncate text-xs leading-5 text-gray-500">{{ employee.email }}</p>
+            </div>
+          </div>
+          <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+            <p class="text-sm leading-6 text-gray-900">{{ employee.area }}</p>
+            <p class="mt-1 text-xs leading-5 text-gray-500">Last seen <time datetime="">{{employee.hire_date}}</time></p>
+            <a routerLink="edit/{{employee.id}}" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium">Edit</a>
+          </div>
+        </li>
+      } 
+
+      
+    </ul>
+  </div>
+</div>

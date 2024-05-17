@@ -1,0 +1,105 @@
+<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+  <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm"></div>
+  <form class="space-y-6" (submit)="createEmployee()">
+    <div class="space-y-12">
+
+      <div class="border-b border-gray-900/10 pb-12">
+        <h2 class="text-base font-semibold leading-7 text-gray-900">Personal Information</h2>
+        <p class="mt-1 text-sm leading-6 text-gray-600">Use a permanent address where you can receive mail.</p>
+  
+        <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+          <div class="sm:col-span-3">
+            <label for="Primr_Nombre" class="block text-sm font-medium leading-6 text-gray-900">Primr Nombre</label>
+            <div class="mt-2">
+              <input type="text" [(ngModel)]="employee.first_name" name="first_name" required autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            </div>
+          </div>
+  
+          <div class="sm:col-span-3">
+            <label for="Otros_Nombres" class="block text-sm font-medium leading-6 text-gray-900">Otros Nombres</label>
+            <div class="mt-2">
+              <input type="text" [(ngModel)]="employee.other_names" name="other_names" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            </div>
+          </div>
+
+          <div class="sm:col-span-3">
+            <label for="Primer_Apellido" class="block text-sm font-medium leading-6 text-gray-900">Primer Apellido</label>
+            <div class="mt-2">
+              <input type="text" [(ngModel)]="employee.first_last_name" name="first_last_name" required autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            </div>
+          </div>
+  
+          <div class="sm:col-span-3">
+            <label for="Segundo_Apellido" class="block text-sm font-medium leading-6 text-gray-900">Segundo Apellido</label>
+            <div class="mt-2">
+              <input type="text" [(ngModel)]="employee.second_last_name" name="second_last_name" required autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            </div>
+          </div>
+
+          <div class="col-span-full">
+            <label for="País_del_Empleo" class="block text-sm font-medium leading-6 text-gray-900">País del Empleo</label>
+            <div class="mt-2">
+              <select [(ngModel)]="employee.country" name="country" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                <option value="Colombia">Colombia</option>
+                <option value="United States">United States</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="sm:col-span-3 sm:col-start-1">
+            <label for="Tipo_de_Identificación" class="block text-sm font-medium leading-6 text-gray-900">Tipo de Identificación</label>
+            <div class="mt-2">
+              <select  [(ngModel)]="employee.identification_type" name="identification_type" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                <option value="Cédula de Ciudadanía">Cédula de Ciudadanía</option>
+                <option value="Cédula de Extranjería">Cédula de Extranjería</option>
+                <option value="Pasaporte">Pasaporte</option>
+                <option value="Permiso Especial">Permiso Especial</option>
+              </select>
+            </div>
+          </div>
+  
+          <div class="sm:col-span-3">
+            <label for="Número_de_Identificación" class="block text-sm font-medium leading-6 text-gray-900">Número de Identificación</label>
+            <div class="mt-2">
+              <input type="text" [(ngModel)]="employee.identification_number" name="identification_number" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            </div>
+          </div>  
+
+          <div class="col-span-full">
+            <label for="area" class="block text-sm font-medium leading-6 text-gray-900">Area</label>
+            <div class="mt-2">
+              <select [(ngModel)]="employee.area" name="area" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                <option value="Administración">Administración</option>
+                <option value="Financiera">Financiera</option>
+                <option value="Compras">Compras</option>
+                <option value="Infraestructura">Infraestructura</option>
+                <option value="Operación">Operación</option>
+                <option value="Talento Humano">Talento Humano</option>
+                <option value="Servicios Varios">Servicios Varios</option>
+              </select>
+
+            </div>
+          </div>
+  
+          <div class="col-span-full">
+            <label for="Fecha_de_Ingreso" class="block text-sm font-medium leading-6 text-gray-900">Fecha de Ingreso</label>
+            <div class="mt-2">
+              <input type="date" [(ngModel)]="employee.hire_date" name="hire_date" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            </div>
+          </div>
+  
+          
+        </div>
+      </div>
+  
+      <div class="border-b border-gray-900/10 pb-12">
+       
+    </div>
+    </div>
+  
+    <div class="mt-6 flex items-center justify-end gap-x-6">
+      <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Cancel</button>
+      <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
+    </div>
+  </form>
+</div>
